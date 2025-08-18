@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { zodTextFormat } from 'openai/helpers/zod';
+import { z } from 'zod';
 import { MODEL } from '@/app/config/constants';
 import { InputValidator, ServerRateLimiter } from '@/app/lib/utils/api-helpers';
 
@@ -64,21 +66,40 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const instructions: string =
-      'You are a helpful assistant who knows general knowledge about the world. Keep your responses to one or two sentances, maximum.';
+    const Question = z.object({
+        question: z.string(),
+        answer: z.string(),
+    })
 
-    const response = await client.responses.create({
+    const Round = z.object({
+        questions: z.array(Question),
+        title: z.string()
+    })
+
+    const QuizQuestions = z.object({
+        rounds: z.array(Round)
+    })
+
+    const instructions: string =
+      `You are an expert quiz master. Your role is to create quizzes for people about any topic, with anywhere between 1 and 10 rounds, with each round containing anywhere between 1 and 30 questions. If no topic is specified, make the quiz a general knowledge quiz. If no number of rounds specified, make a quiz with 3 rounds. If no number of questions is specified, make the default number of questions 10. If there are multiple rounds, start with easy questions and get progressively harder as the questions progress. Within every round created, also vary the difficulty of questions, so that not all questions in even the hardest round are impossible for a lay person to get. Provide your questions and answers in the JSON schema format specified.`;
+
+    const response = await client.responses.parse({
       model: MODEL,
       instructions,
       input,
+      text: {
+        format: zodTextFormat(QuizQuestions, "quiz_questions")
+      }
     });
 
     if (response.status !== 'completed') {
       throw new Error(`Responses API error: ${response.status}`);
     }
 
+    console.log(response.output_parsed)
+
     return NextResponse.json({
-      response: response.output_text || 'Response recieved',
+      response: response.output_parsed || 'Response recieved',
       originalInput: input,
       remainingRequests: ServerRateLimiter.getRemaining(ip),
     });
