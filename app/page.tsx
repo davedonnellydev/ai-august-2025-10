@@ -1,9 +1,9 @@
-import { Welcome } from '../components/Welcome/Welcome';
+import { QuizOptions } from '../components/QuizOptions/QuizOptions';
 
 export default function HomePage() {
   return (
     <>
-      <Welcome />
+      <QuizOptions />
     </>
   );
 }
