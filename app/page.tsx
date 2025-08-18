@@ -7,7 +7,7 @@ import { OnlineQuiz } from '../components/OnlineQuiz/OnlineQuiz';
 import { ExportQuiz } from '../components/ExportQuiz/ExportQuiz';
 import { LoadingScreen } from '../components/LoadingScreen/LoadingScreen';
 
-interface Round {
+export interface Round {
   id: string;
   name: string;
   topic: string;
@@ -16,7 +16,7 @@ interface Round {
   hasTimeLimit: boolean;
 }
 
-interface QuizConfig {
+export interface QuizConfig {
   rounds: Round[];
   quizTopic: string;
   quizMode: 'online' | 'export';
@@ -46,30 +46,30 @@ export default function HomePage() {
     setAppState('loading');
 
     try {
-      // TODO: Call the OpenAI API endpoint here
-      // const response = await fetch('/api/openai/responses', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ input: config })
-      // });
-      // const data = await response.json();
-      // setQuizData(data.response);
+      const response = await fetch('/api/openai/responses', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ QuizConfig: config }),
+      });
 
-      // For now, simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          errorData.error || `HTTP error! status: ${response.status}`
+        );
+      }
 
-      // Mock data for testing
-      const mockData: QuizData = {
-        rounds: config.rounds.map((round) => ({
-          title: round.name,
-          questions: Array.from({ length: round.questionsCount }, (_, i) => ({
-            question: `Sample question ${i + 1} for ${round.topic}`,
-            answer: `Sample answer ${i + 1} for ${round.topic}`,
-          })),
-        })),
-      };
+      const data = await response.json();
 
-      setQuizData(mockData);
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
+      if (!data.response || !data.response.rounds) {
+        throw new Error('Invalid response format from API');
+      }
+
+      setQuizData(data.response);
 
       if (config.quizMode === 'online') {
         setAppState('online-quiz');
@@ -79,6 +79,13 @@ export default function HomePage() {
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Failed to generate quiz:', error);
+
+      // Show user-friendly error message
+      const errorMessage =
+        error instanceof Error ? error.message : 'Failed to generate quiz';
+      // eslint-disable-next-line no-alert
+      alert(`Error: ${errorMessage}. Please try again.`);
+
       setAppState('config');
     }
   };

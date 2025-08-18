@@ -120,16 +120,6 @@ export function QuizOptions({ onGenerateQuiz }: QuizOptionsProps) {
   );
 
   const handleGenerateQuiz = () => {
-    // Validate configuration
-    const hasEmptyTopics = quizConfig.rounds.some(
-      (round) => !round.topic.trim()
-    );
-    if (hasEmptyTopics) {
-      // eslint-disable-next-line no-alert
-      alert('Please fill in topics for all rounds');
-      return;
-    }
-
     // Call the parent handler
     onGenerateQuiz(quizConfig);
   };
