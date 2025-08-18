@@ -10,7 +10,8 @@ import { theme } from '../theme';
 
 export const metadata = {
   title: 'Quiz Maker',
-  description: 'An AI-powered quiz maker app built for AIAugust App a Day Challenge',
+  description:
+    'An AI-powered quiz maker app built for AIAugust App a Day Challenge',
 };
 
 export default function RootLayout({ children }: { children: any }) {

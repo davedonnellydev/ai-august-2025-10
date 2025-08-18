@@ -101,8 +101,8 @@ export function QuizOptions() {
   };
 
   const updateQuizTopic = (topic: string) => {
-    setQuizConfig((prev) => ({ ...prev, quizTopic: topic }))
-  }
+    setQuizConfig((prev) => ({ ...prev, quizTopic: topic }));
+  };
 
   // Calculate totals
   const totalQuestions = quizConfig.rounds.reduce(
@@ -116,7 +116,6 @@ export function QuizOptions() {
   );
 
   const handleGenerateQuiz = () => {
-
     if (quizConfig.quizMode === 'online') {
       // Handle online quiz generation
       // eslint-disable-next-line no-console
@@ -148,15 +147,13 @@ export function QuizOptions() {
               Quiz Topic
             </Title>
             <Stack gap="md">
-                <TextInput 
-                    label="Quiz Topic"
-                    value={quizConfig.quizTopic}
-                    onChange={(e) =>
-                        updateQuizTopic(e.currentTarget.value)
-                    }
-                    placeholder="e.g., General Knowledge"
-                    size="md"
-                />
+              <TextInput
+                label="Quiz Topic"
+                value={quizConfig.quizTopic}
+                onChange={(e) => updateQuizTopic(e.currentTarget.value)}
+                placeholder="e.g., General Knowledge"
+                size="md"
+              />
             </Stack>
           </Card>
 
@@ -266,7 +263,7 @@ export function QuizOptions() {
                           onClick={() => removeRound(round.id)}
                           className={styles.removeButton}
                         >
-                            <IconTrash size={14} />
+                          <IconTrash size={14} />
                         </Button>
                       )}
                     </Grid.Col>
