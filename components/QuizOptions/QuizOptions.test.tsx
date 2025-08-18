@@ -3,12 +3,13 @@ import { QuizOptions } from './QuizOptions';
 
 describe('QuizOptions component', () => {
   const user = userEvent.setup();
+  const mockOnGenerateQuiz = jest.fn();
 
   it('renders quiz configuration interface', () => {
-    render(<QuizOptions />);
+    render(<QuizOptions onGenerateQuiz={mockOnGenerateQuiz} />);
 
     // Check header
-    expect(screen.getByText('Quiz Maker')).toBeInTheDocument();
+    expect(screen.getByText('Quiz Options')).toBeInTheDocument();
     expect(
       screen.getByText('Configure your quiz settings and generate questions')
     ).toBeInTheDocument();
@@ -43,7 +44,7 @@ describe('QuizOptions component', () => {
   });
 
   it('allows configuring round settings', async () => {
-    render(<QuizOptions />);
+    render(<QuizOptions onGenerateQuiz={mockOnGenerateQuiz} />);
 
     // Find the round name input
     const roundNameInput = screen.getByDisplayValue('Round 1');
@@ -72,7 +73,7 @@ describe('QuizOptions component', () => {
   });
 
   it('allows adding and removing rounds', async () => {
-    render(<QuizOptions />);
+    render(<QuizOptions onGenerateQuiz={mockOnGenerateQuiz} />);
 
     // Initially should have 1 round
     expect(screen.getByText('1')).toBeInTheDocument();
@@ -103,7 +104,7 @@ describe('QuizOptions component', () => {
   });
 
   it('allows switching between quiz modes', async () => {
-    render(<QuizOptions />);
+    render(<QuizOptions onGenerateQuiz={mockOnGenerateQuiz} />);
 
     // Initially should be in online mode
     const exportButton = screen.getByText('Export Quiz');
@@ -130,7 +131,7 @@ describe('QuizOptions component', () => {
   });
 
   it('updates summary when configuration changes', async () => {
-    render(<QuizOptions />);
+    render(<QuizOptions onGenerateQuiz={mockOnGenerateQuiz} />);
 
     // Initially should show 1 round, 10 questions, 15 minutes
     expect(screen.getByText('1')).toBeInTheDocument(); // Total Rounds
@@ -148,7 +149,7 @@ describe('QuizOptions component', () => {
   });
 
   it('allows configuring quiz topic', async () => {
-    render(<QuizOptions />);
+    render(<QuizOptions onGenerateQuiz={mockOnGenerateQuiz} />);
 
     const topicInput = screen.getByLabelText('Quiz Topic');
     await user.type(topicInput, 'General Knowledge Quiz');
@@ -157,7 +158,7 @@ describe('QuizOptions component', () => {
   });
 
   it('handles time limit toggle correctly', async () => {
-    render(<QuizOptions />);
+    render(<QuizOptions onGenerateQuiz={mockOnGenerateQuiz} />);
 
     // Initially time limit should be enabled
     const timeLimitToggle = screen.getByLabelText('Time Limit');
