@@ -5,7 +5,52 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="PStE7o-6SehlOC6oDGql-1" value="&lt;div&gt;MVP&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontSize=22;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="80" y="40" width="680" height="360" as="geometry" />
+          <mxGeometry x="80" y="50" width="680" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-1" value="Stretch goals" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;fontSize=22;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="680" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CmgAIND95UZQVU-sW5ks-2" target="CmgAIND95UZQVU-sW5ks-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CmgAIND95UZQVU-sW5ks-2" target="CmgAIND95UZQVU-sW5ks-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-2" value="User enters topic &amp;amp; number of rounds &amp;amp; number of questions per round" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CmgAIND95UZQVU-sW5ks-3" target="CmgAIND95UZQVU-sW5ks-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-3" value="User input sent to AI to generate questions in Structured Output formatting" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CmgAIND95UZQVU-sW5ks-5" target="CmgAIND95UZQVU-sW5ks-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CmgAIND95UZQVU-sW5ks-5" target="CmgAIND95UZQVU-sW5ks-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-5" value="Response received and user has the choice of reading all questions and answers, or taking the quiz themselves" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="65" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CmgAIND95UZQVU-sW5ks-7" target="CmgAIND95UZQVU-sW5ks-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-7" value="If they take the quiz, the UI takes them through each question one by one and adds their score up at the end" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="80" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-9" value="If they choose to see all questions/answers, they get taken to a page where they can export the questions and answers" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="230" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-11" value="User can also select tone of questions and also specify different topic for each round" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-13" value="Many users can take the same quiz and quiz will show final scores at the end?" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CmgAIND95UZQVU-sW5ks-15" value="There can be some sort of timer element set for the quiz" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="440" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
