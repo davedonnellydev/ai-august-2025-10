@@ -42,7 +42,11 @@ interface QuizConfig {
   estimatedTime: number;
 }
 
-export function QuizOptions() {
+interface QuizOptionsProps {
+  onGenerateQuiz: (config: QuizConfig) => void;
+}
+
+export function QuizOptions({ onGenerateQuiz }: QuizOptionsProps) {
   const [quizConfig, setQuizConfig] = useState<QuizConfig>({
     rounds: [
       {
@@ -116,15 +120,18 @@ export function QuizOptions() {
   );
 
   const handleGenerateQuiz = () => {
-    if (quizConfig.quizMode === 'online') {
-      // Handle online quiz generation
-      // eslint-disable-next-line no-console
-      console.log('Generating online quiz:', quizConfig);
-    } else {
-      // Handle export quiz generation
-      // eslint-disable-next-line no-console
-      console.log('Generating export quiz:', quizConfig);
+    // Validate configuration
+    const hasEmptyTopics = quizConfig.rounds.some(
+      (round) => !round.topic.trim()
+    );
+    if (hasEmptyTopics) {
+      // eslint-disable-next-line no-alert
+      alert('Please fill in topics for all rounds');
+      return;
     }
+
+    // Call the parent handler
+    onGenerateQuiz(quizConfig);
   };
 
   return (
@@ -134,7 +141,7 @@ export function QuizOptions() {
           {/* Header */}
           <div className={styles.header}>
             <Title order={1} className={styles.title}>
-              Quiz Maker
+              Quiz Options
             </Title>
             <Text c="dimmed" size="lg">
               Configure your quiz settings and generate questions

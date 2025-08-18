@@ -1,0 +1,94 @@
+.container {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 10px 25px rgb(0, 0, 0, 0.1);
+}
+
+.infoCard {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgb(59, 130, 246, 0.1);
+}
+
+.quizContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roundCard {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  page-break-inside: avoid;
+}
+
+.roundCard:hover {
+  border-color: #10b981;
+  box-shadow: 0 8px 20px rgb(16, 185, 129, 0.1);
+}
+
+.roundHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.questionContainer {
+  margin-bottom: 1.5rem;
+}
+
+.questionSection {
+  margin-bottom: 1rem;
+}
+
+.answerSection {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #10b981;
+}
+
+.footerCard {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 2px solid #e2e8f0;
+  margin-top: 1rem;
+}
+
+/* Print styles */
+@media print {
+  .container {
+    background: white !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .roundCard,
+  .infoCard,
+  .footerCard {
+    background: white !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  .answerSection {
+    background: #f0fdf4 !important;
+    border: 1px solid #10b981 !important;
+  }
+
+  /* Hide action buttons when printing */
+  .container button {
+    display: none !important;
+  }
+}

@@ -1,0 +1,48 @@
+.container {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 10px 25px rgb(0, 0, 0, 0.1);
+}
+
+.questionCard {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.questionCard:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgb(59, 130, 246, 0.1);
+}
+
+.roundPreview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.roundPreview:hover {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  transform: translateY(-1px);
+}
+
+.startButton {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.startButton:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgb(59, 130, 246, 0.3);
+}
