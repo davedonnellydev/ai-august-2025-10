@@ -1,31 +1,31 @@
 # Project 10 #AIAugustAppADay: Quiz Maker
 
-![Last Commit](https://img.shields.io/github/last-commit/davedonnellydev/ai-august-2025-10)  
+![Last Commit](https://img.shields.io/github/last-commit/davedonnellydev/ai-august-2025-10)
 
 **📆 Date**: 18/Aug/2025  
-**🎯 Project Objective**: AI generates quizzes based on a given topic.    
-**🚀 Features**: User enters a topic, AI generates 3 rounds of 10 questions; user can also adjust level of difficulty overall or per round. Stretch goals: User can choose tone of questions (funny, wacky, intellectual etc); user can export questions and answers?; multiple users can play.   
-**🛠️ Tech used**: Next.js, Typescript, OpenAI API    
+**🎯 Project Objective**: AI generates quizzes based on a given topic.  
+**🚀 Features**: User enters a topic, AI generates 3 rounds of 10 questions; user can also adjust level of difficulty overall or per round. Stretch goals: User can choose tone of questions (funny, wacky, intellectual etc); user can export questions and answers?; multiple users can play.  
+**🛠️ Tech used**: Next.js, Typescript, OpenAI API  
 **▶️ Live Demo**: _[https://your-demo-url.com](https://your-demo-url.com)_  
 _(Link will be added after deployment)_
 
 ## 🗒️ Summary
 
 **Lessons learned**  
-_A little summary of learnings_  
+_A little summary of learnings_
 
 **Blockers**  
-_Note any blockers here_  
+_Note any blockers here_
 
 **Final thoughts**  
-_Any final thoughts here_  
+_Any final thoughts here_
 
-This project has been built as part of my AI August App-A-Day Challenge. You can read more information on the full project here: [https://github.com/davedonnellydev/ai-august-2025-challenge](https://github.com/davedonnellydev/ai-august-2025-challenge).  
+This project has been built as part of my AI August App-A-Day Challenge. You can read more information on the full project here: [https://github.com/davedonnellydev/ai-august-2025-challenge](https://github.com/davedonnellydev/ai-august-2025-challenge).
 
 ## 🧪 Testing
 
 ![CI](https://github.com/davedonnellydev/ai-august-2025-10/actions/workflows/npm_test.yml/badge.svg)  
-_Note: Test suite runs automatically with each push/merge._  
+_Note: Test suite runs automatically with each push/merge._
 
 ## Quick Start
 

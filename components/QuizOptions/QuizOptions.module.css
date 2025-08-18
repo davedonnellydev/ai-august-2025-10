@@ -1,0 +1,245 @@
+/* Container styles */
+.container {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 10px 25px rgb(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+/* Mode card styles */
+.modeCard {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.modeCard:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgb(59, 130, 246, 0.15);
+}
+
+.modeButton {
+  transition: all 0.3s ease;
+  min-width: 160px;
+}
+
+.modeButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgb(0, 0, 0, 0.15);
+}
+
+/* Round card styles */
+.roundCard {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slide-in 0.3s ease-out;
+}
+
+.roundCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.roundCard:hover::before {
+  transform: scaleX(1);
+}
+
+.roundCard:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgb(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.roundCard:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.roundCard input:focus,
+.roundCard select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgb(59, 130, 246, 0.1);
+}
+
+.roundCard button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgb(0, 0, 0, 0.15);
+}
+
+.roundCard.error {
+  border-color: #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.roundCard.error::before {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.roundCard.success {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.roundCard.success::before {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+/* Summary card styles */
+.summaryCard {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.summaryCard:hover {
+  border-color: #10b981;
+  box-shadow: 0 8px 20px rgb(16, 185, 129, 0.15);
+}
+
+.summaryItem {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  transition: all 0.3s ease;
+}
+
+.summaryItem:hover {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  transform: translateY(-2px);
+}
+
+/* Generate button styles */
+.generateButton {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border: none;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.generateButton:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgb(59, 130, 246, 0.4);
+}
+
+.generateButton:active {
+  transform: translateY(-1px);
+}
+
+/* Remove button styles */
+.removeButton {
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.removeButton:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .modeButton {
+    min-width: 140px;
+    font-size: 0.875rem;
+  }
+
+  .generateButton {
+    min-width: 180px;
+    font-size: 0.875rem;
+  }
+
+  .summaryItem {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .modeButton {
+    min-width: 120px;
+    font-size: 0.75rem;
+  }
+
+  .generateButton {
+    min-width: 160px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Accessibility improvements */
+.container:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation for new rounds */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transitions for interactive elements */
+.container *,
+.roundCard *,
+.modeCard *,
+.summaryCard * {
+  transition: all 0.2s ease;
+}
+
+/* Loading state styles */
+.generateButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
