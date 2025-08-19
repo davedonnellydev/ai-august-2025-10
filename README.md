@@ -6,19 +6,25 @@
 **🎯 Project Objective**: AI generates quizzes based on a given topic.  
 **🚀 Features**: User enters a topic, AI generates 3 rounds of 10 questions; user can also adjust level of difficulty overall or per round. Stretch goals: User can choose tone of questions (funny, wacky, intellectual etc); user can export questions and answers?; multiple users can play.  
 **🛠️ Tech used**: Next.js, Typescript, OpenAI API  
-**▶️ Live Demo**: _[https://your-demo-url.com](https://your-demo-url.com)_  
-_(Link will be added after deployment)_
+**▶️ Live Demo**: [https://ai-august-2025-10.netlify.app/](https://ai-august-2025-10.netlify.app/)  
+
 
 ## 🗒️ Summary
 
-**Lessons learned**  
-_A little summary of learnings_
+Today’s project was a simple quiz maker app. The user could enter a topic, and the app would generate a quiz that could either be exported or taken online. My stretch goal was to allow multiple users to take the same quiz online — something I’ve seen implemented before but never explored in detail. That would have been a great learning opportunity, but it will have to wait for a future version.  
 
-**Blockers**  
-_Note any blockers here_
+The project itself was fairly straightforward, but what stood out most was the way I used Cursor as a building tool. I’m noticing that I often accept Cursor’s output at face value: it generates multiple files, I skim them, they look okay, I click accept, and then rely on tests, the linter, formatting, and manual user testing to catch any issues. Only when something fails do I dive into the code more carefully.  
+
+This workflow is efficient in the short term, but it feels risky. As a junior developer, I worry that I might be reinforcing bad habits — relying too heavily on AI without truly understanding the details of the code being added to my codebase. At the same time, this challenge is about exploring what AI can do, and part of that is recognising both the benefits and pitfalls of integrating it into daily development.  
+
+**Lessons learned**  
+- Stretch goals are great for ambition, but even simple MVPs can highlight important insights.  
+- AI can lull you into a false sense of security. Always balance trust with verification.  
+- Build in small enough chunks so you know exactly what’s going into your codebase.  
 
 **Final thoughts**  
-_Any final thoughts here_
+This was a good reminder that AI is a tool — not a substitute for understanding. While it’s tempting to let it take the wheel, the responsibility for clean, maintainable code still lies with me.  
+
 
 This project has been built as part of my AI August App-A-Day Challenge. You can read more information on the full project here: [https://github.com/davedonnellydev/ai-august-2025-challenge](https://github.com/davedonnellydev/ai-august-2025-challenge).
 
